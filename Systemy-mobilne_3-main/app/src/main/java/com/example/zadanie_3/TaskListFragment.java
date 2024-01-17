@@ -17,22 +17,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class TaskListFragment extends Fragment {
+
     private RecyclerView recyclerView;
     private TaskAdapter adapter;
     public static final String KEY_EXTRA_TASK_ID = "extra_task_id";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
+
         recyclerView = view.findViewById(R.id.task_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        // Przycisk "Dodaj pracownika"
         Button btnAddTask = view.findViewById(R.id.btnAddTask);
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Otwórz nową aktywność do dodawania nowego zadania
+                // Otwórz nową aktywność do dodawania nowego pracownika
                 Intent intent = new Intent(getActivity(), AddTaskActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Przycisk "Opcje"
+        Button btnOptions = view.findViewById(R.id.btnOptions);
+        btnOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Otwórz aktywność związaną z pogodą
+                Intent intent = new Intent(getActivity(), WeatherActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,11 +56,11 @@ public class TaskListFragment extends Fragment {
     }
 
     @Override
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
         updateView();
     }
+
     private class TaskAdapter extends RecyclerView.Adapter<TaskHolder> {
         private List<Task> tasks;
 
@@ -71,6 +86,7 @@ public class TaskListFragment extends Fragment {
             return tasks.size();
         }
     }
+
     private void updateView() {
         TaskStorage taskStorage = TaskStorage.getInstance();
         List<Task> tasks = taskStorage.getTasks();
@@ -81,10 +97,12 @@ public class TaskListFragment extends Fragment {
             adapter.notifyDataSetChanged();
         }
     }
+
     private class TaskHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView nameTextView, dateTextView;
         private Task task;
+
         public TaskHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_task, parent, false));
             itemView.setOnClickListener(this);

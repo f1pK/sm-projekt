@@ -23,12 +23,6 @@
         android:layout_height="wrap_content"
         android:text="@string/details_label" />
 
-    <Button
-        android:id="@+id/task_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select Date" />
-
     <CheckBox
         android:id="@+id/task_done"
         android:layout_width="match_parent"
@@ -39,6 +33,6 @@
         android:id="@+id/btnAddTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dodaj zadanie" />
+        android:text="Dodaj" />
 
 </LinearLayout>
