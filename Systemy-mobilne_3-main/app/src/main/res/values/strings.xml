@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Zadanie_3</string>
+    <string name="name_hint">Wpisz imie i nazwisko</string>
+    <string name="name_label">Imie i nazwisko</string>
+    <string name="details_label">Dzień pracy</string>
+    <string name="done_label">Czy pracuje</string>
+</resources>
