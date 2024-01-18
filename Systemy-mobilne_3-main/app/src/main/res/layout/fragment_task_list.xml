@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-    <!-- Przyciski "Dodaj nowe zadanie" i "Opcje" obok siebie -->
+    <!-- Przyciski "Dodaj nowe zadanie", "Opcje" i "Lokalizacja" obok siebie -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:text="Dodaj pracownika"
             android:layout_gravity="end"
-            android:layout_margin="16dp"/>
+            android:layout_margin="6dp"/>
 
         <Button
             android:id="@+id/btnOptions"
@@ -32,6 +32,15 @@
             android:layout_weight="1"
             android:text="Opcje"
             android:layout_gravity="end"
-            android:layout_margin="16dp"/>
+            android:layout_margin="6dp"/>
+
+        <Button
+            android:id="@+id/btnLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lokalizacja"
+            android:layout_gravity="end"
+            android:layout_margin="6dp"/>
     </LinearLayout>
 </LinearLayout>

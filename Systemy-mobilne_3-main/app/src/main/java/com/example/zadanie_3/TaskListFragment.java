@@ -46,8 +46,18 @@ public class TaskListFragment extends Fragment {
         btnOptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Otwórz aktywność związaną z pogodą
                 Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //przycisk lokalizacji API
+        Button btnLocation = view.findViewById(R.id.btnLocation);
+        btnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Otwórz nową aktywność związana z lokalizacją
+                Intent intent = new Intent(getActivity(), LokalizacjaActivity.class);
                 startActivity(intent);
             }
         });
